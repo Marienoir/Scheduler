@@ -1,12 +1,12 @@
 {
     "development": {
-      "ENV": "HEROKU_POSTGRESQL_IVORY_URL"
+      "ENV": "DATABASE_URL"
     },
     "test": {
-      "ENV": "HEROKU_POSTGRESQL_IVORY_URL"
+      "ENV": "DATABASE_URL"
     },
     "production": {  
-      "ENV": "HEROKU_POSTGRESQL_IVORY_URL"
+      "ENV": "DATABASE_URL"
     },
     "defaultEnv": {
       "ENV": "NODE_ENV"
