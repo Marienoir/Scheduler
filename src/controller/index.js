@@ -27,6 +27,7 @@ export const login = async (req, res, next) => {
       });
     } else {
       res.status(200).json({
+        code: 200,
         message: 'Login successful',
         token
       });
