@@ -36,13 +36,14 @@ const cronJobSchedule = async (req) => {
   let mailOptions = {
     from: 'SCHEDULER APP',
     to: `${email}`,
-    subject: "You have a scheduled event",
+    subject: "Event Notification",
     html: `<p>Hello ${first_name} ${last_name},</p>
-            <p> You have an event scheduled.</p>
-            <p> Details for schedule can be found below: </p>
-            <p><b>Name</b>: ${name_of_schedule}</p>
-            <p>b>Venue</b>: ${place_of_schedule}</p>
-            <p>b>Purpose</b>: ${purpose_of_schedule}</p>
+            <p> You have an event scheduled with details below: </p>
+            <hr>
+            <p><b>Name</b> : ${name_of_schedule}</p>
+            <p><b>Venue</b> : ${place_of_schedule}</p>
+            <p><b>Purpose</b> : ${purpose_of_schedule}</p>
+            <hr>
             Kind regards, <br>
             <h4> Scheduler Support</h4>`
   };

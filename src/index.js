@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   res.status(200).json({
     code: 200,
     status: 'Success',
-    message: 'Welcome to GIF',
+    message: 'Welcome to Scheduler',
   });
 });
 
@@ -54,7 +54,7 @@ app.use((err, req, res, next) => {
 
 db.connect()
   .then((obj) => {
-    app.listen(port, () => {
+    app.listen(process.env.PORT , () => {
       obj.done();
       console.log(`Starting on port ${port}`);
     });
