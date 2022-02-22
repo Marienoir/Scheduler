@@ -5,6 +5,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import db from './db';
 import route from './router';
+import viewRouter from '../frontend/routes';
+import path from 'path';
+
 
 dotenv.config();
 const port = process.env.PORT || 5000;
@@ -18,21 +21,30 @@ app.use(
   }),
 );
 
+app.use("/api", route);
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
+
+app.use(express.static("public"));
+app.use(
+    express.static("views", {
+        extensions: ["html"],
+    })
+);
 app.use(
   cors({
     origin: '*',
   }),
 );
 
-
-
-app.get('/', (req, res) => {
-  res.status(200).json({
-    code: 200,
-    status: 'Success',
-    message: 'Welcome to Scheduler',
-  });
-});
+app.use("/", viewRouter);
+// app.get('/', (req, res) => {
+//   res.status(200).json({
+//     code: 200,
+//     status: 'Success',
+//     message: 'Welcome to Scheduler',
+//   });
+// });
 
 app.use(route);
 

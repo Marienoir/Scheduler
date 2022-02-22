@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scheduler</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/css/index.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<main>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container my-3">
+            <a href="/index" class="navbar-brand">Scheduler</a>
+        </div>
+    </nav>
+
+    <section class='content__wrapper'>
+        <div class='content__col-7 m-auto'>
+            <div class='content__container'>
+                <h1 class='content__white-body-header fs-header'>
+                   Have an intending event? Select a date and fill in the required details below
+                </h1>
+                <p class='content__white-body-text'>
+                    Not interested? <a href="#" id="goto-dashboard"><span class='text-primary fw-bold'>Go dashboard</span></a>
+                </p>
+                <form class='form-wrapper' id="submit">
+                    <div class='form-input-wrapper'>
+                        <input name="date" type="date" class="form-input" id="date-input" placeholder="Enter Date"/>
+                        <span class="form-input-placeholder">Enter Date</span>
+                        <div class='mt-1'>
+                            <small class='form-hint text-danger'></small>
+                        </div>
+                    </div>
+
+                    <div class='form-input-wrapper'>
+                        <label for="time_of_schedule">Choose a time for schedule</label>
+                        <input type="time" id="time_of_schedule" name="time_of_schedule"
+                            min="00:00" max="24:00" required>
+
+                        <small class='form-hint text-danger'></small>
+                    </div>
+
+                    <div class='form-input-wrapper'>
+                        <input name="name_of_schedule" id="name_of_schedule" type="text" class="form-input" placeholder="Enter name of schedule"/>
+                        <span class="form-input-placeholder">Enter name of schedule</span>
+                        <div class='mt-1'>
+                            <small class='form-hint text-danger'></small>
+                        </div>
+                    </div>
+
+                    <div class='form-input-wrapper'>
+                        <input name="time_of_schedule" id="time_of_schedule" type="text" class="form-input" placeholder="Enter time of schedule"/>
+                        <span class="form-input-placeholder">Enter time of schedule</span>
+                        <div class='mt-1'>
+                            <small class='form-hint text-danger'></small>
+                        </div>
+                    </div>
+
+
+                    <div class='form-input-wrapper'>
+                        <input name="place_of_schedule" id="place_of_schedule" type="text" class="form-input" placeholder="Enter place of schedule"/>
+                        <span class="form-input-placeholder">Enter place of schedule</span>
+                        <div class='mt-1'>
+                            <small class='form-hint text-danger'></small>
+                        </div>
+                    </div>
+
+                    <div class='form-input-wrapper'>
+                        <textarea name="purpose_of_schedule" id="purpose_of_schedule" type="text" class="form-input" placeholder="Enter purpose of schedule" rows="4" cols="50" ></textarea>
+                        <span class="form-input-placeholder">Enter purpose of schedule</span>
+                        <div class='mt-1'>
+                            <small class='form-hint text-danger'></small>
+                        </div>
+                    </div>
+
+                    <div class='form-btn-wrap'>
+                        <button type='submit' class='btn btn-primary'>
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="/js/create-schedule.js"></script>
+</body>
+</html>
